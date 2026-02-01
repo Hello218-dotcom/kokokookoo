@@ -527,6 +527,20 @@
       touch-action:none;
     }
     /* === END MOBILE_RESPONSIVE_PATCH v1 === */
+
+    /* === PHOTO FIX PATCH (do not remove) === */
+    .frame{
+      aspect-ratio: 4 / 3;
+      background:#fff;
+    }
+    .frame img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+    }
+    /* === END PHOTO FIX PATCH === */
   </style>
 <link href="assets/stoxgear-pro.css" rel="stylesheet"/></head>
 <body data-page="board of directors.html">
@@ -609,7 +623,7 @@
 <p class="subtitle">Meet the people steering the vision and execution.</p>
 <section aria-label="Faysal (Faisal) Dawood" class="member reveal">
 <figure class="frame">
-<img alt="Faisal Dawood portrait" src="faisal-dawood.jpg"/>
+<img alt="Faisal Dawood portrait" src="faisal-dawood.jpg" loading="lazy" decoding="async"/>
 </figure>
 <div>
 <h3>Faysal (Faisal) Dawood</h3>
@@ -626,7 +640,7 @@
 </section>
 <section aria-label="Salman Hussain" class="member reveal">
 <figure class="frame">
-<img alt="Salman Hussain portrait" src="salman-hussain.jpg"/>
+<img alt="Salman Hussain portrait" src="salman-hussain.jpg" loading="lazy" decoding="async"/>
 </figure>
 <div>
 <h3>Salman Hussain</h3>
@@ -643,7 +657,7 @@
 </section>
 <section aria-label="Muhammad Usman Sajid" class="member reveal">
 <figure class="frame">
-<img alt="Muhammad Usman Sajid portrait" src="usman-sajid.jpg"/>
+<img alt="Muhammad Usman Sajid portrait" src="usman-sajid.jpg" loading="lazy" decoding="async"/>
 </figure>
 <div>
 <h3>Muhammad Usman Sajid</h3>
@@ -658,9 +672,10 @@
 <p>He holds an M.Com. from The Islamia University of Bahawalpur with a focus on Financial Management, Investment Analysis, Corporate Finance, and Accounting.</p>
 </div>
 </section>
-    <section aria-label="Mr. Samiullah" class="member reveal">
+
+<section aria-label="Mr. Samiullah" class="member reveal">
   <figure class="frame">
-    <img alt="Mr. Samiullah portrait" src="samiullah.jpg"/>
+    <img alt="Mr. Samiullah portrait" src="samiullah.jpg" loading="lazy" decoding="async"/>
   </figure>
   <div>
     <h3>Mr. Samiullah</h3>
@@ -679,7 +694,7 @@
 
 <section aria-label="Furqan Khan" class="member reveal reverse">
   <figure class="frame">
-    <img alt="Furqan Khan portrait" src="furqan-khan.jpg"/>
+    <img alt="Furqan Khan portrait" src="furqan-khan.jpg" loading="lazy" decoding="async"/>
   </figure>
   <div>
     <h3>Furqan Khan</h3>
@@ -695,6 +710,7 @@
     <p>Currently, he is focused on driving growth in PSX trading by delivering market insights and tailored investment solutions.</p>
   </div>
 </section>
+
 <!-- ===== Sponsors / Shareholding Pattern ===== -->
 <section aria-label="Sponsors and Shareholding" class="sponsors reveal">
 <h2>Details of Sponsors along with Shareholding Pattern of the Company</h2>
