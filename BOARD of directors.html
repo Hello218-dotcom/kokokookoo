@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Board Of Directors</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Board Of Directors</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
     /* ================== THEME ================== */
     :root{
       --bg:#ffffff;
@@ -373,534 +374,293 @@
       gap:10px;
       color:var(--text-dim);
     }
-  
-
-    /* ================= MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
-    /* Keep content unchanged — only improves small-device behavior */
-
-    html, body { overflow-x: hidden; }
-
-    :root{
-      --safeL: max(14px, env(safe-area-inset-left));
-      --safeR: max(14px, env(safe-area-inset-right));
-    }
-
-    .container{
-      padding-left: var(--safeL) !important;
-      padding-right: var(--safeR) !important;
-    }
-
-    /* NAV: prevent brand overflow on very small screens */
-    .nx-brand{ min-width:0; max-width:72%; }
-    .nx-logo, .nx-logo2{ max-width:100%; }
-    @media (max-width:420px){ .nx-logo2{ display:none; } }
-
-    /* MOBILE MENU: use viewport height + allow scrolling inside */
-    @media (max-width:1024px){
-      .nx-menu{
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-        padding-bottom: 14px;
-        border-radius: 0 0 18px 18px;
-      }
-
-      /* wrap long labels */
-      .nx-link, .nx-drop a{
-        white-space: normal;
-        word-break: break-word;
-      }
-
-      /* smooth dropdown open/close without touching HTML */
-      .nx-drop{
-        display:block;       /* participate */
-        max-height:0;        /* collapsed */
-        opacity:0;
-        overflow:hidden;
-        transition: max-height .35s ease, opacity .25s ease;
-        padding: 0;
-        margin: 0;
-      }
-      .nx-item.open > .nx-drop{
-        max-height: 900px;
-        opacity: 1;
-        padding: 6px 0 0;
-      }
-    }
-
-    /* Small phones: button full width, slower ticker */
-    @media (max-width:540px){
-      .btn{ width:100%; justify-content:center; }
-      .hero__inner{ gap:18px; }
-      .hero p{ font-size:15px; }
-      .ticker__row{ animation-duration:42s !important; }
-    }
-
-    /* Pause ticker on hover/touch */
-    .ticker:hover .ticker__row,
-    .ticker:active .ticker__row{ animation-play-state: paused; }
-
-    /* Lock background scroll when menu open (JS toggles this class) */
-    body.nav-locked{ overflow:hidden; touch-action:none; }
-    /* ================= END MOBILE RESPONSIVE PATCH (GLOBAL) ================= */
-
-  
-
-    /* === MOBILE_RESPONSIVE_PATCH v1 (do not remove) === */
-    html, body { overflow-x: hidden; }
-    
-    /* safe area padding for notches */
-    :root{
-      --safeL: max(14px, env(safe-area-inset-left));
-      --safeR: max(14px, env(safe-area-inset-right));
-    }
-    
-    /* containers: prevent edge clipping on small devices */
-    .container{
-      padding-left: var(--safeL) !important;
-      padding-right: var(--safeR) !important;
-    }
-    
-    /* NAV: prevent logo/menu overflow */
-    .nx-brand{ min-width:0; max-width:72%; }
-    .nx-logo,.nx-logo2{ max-width:100%; }
-    
-    /* hide partner logo on very small phones */
-    @media (max-width:420px){
-      .nx-logo2{ display:none !important; }
-    }
-    
-    /* Mobile menu: scroll inside + safe height */
-    @media (max-width:1024px){
-      .nx-menu{
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-        padding-bottom: 14px;
-        border-radius: 0 0 18px 18px;
-      }
-    
-      /* wrap long nav labels */
-      .nx-link, .nx-drop a{
-        white-space: normal;
-        word-break: break-word;
-      }
-    
-      /* Smooth dropdown accordion (works with existing .nx-item.open toggles) */
-      .nx-drop{
-        display:block !important;
-        max-height:0;
-        opacity:0;
-        overflow:hidden;
-        transition:max-height .35s ease, opacity .25s ease;
-        padding:0 !important;
-        margin:0 !important;
-      }
-      .nx-item.open > .nx-drop{
-        max-height: 1200px;
-        opacity: 1;
-        padding-top: 6px !important;
-      }
-    }
-    
-    /* HERO & CTA: full width buttons on small phones */
-    @media (max-width:540px){
-      .btn{ width:100%; justify-content:center; }
-      .hero__inner{ gap:18px; }
-      .hero p{ font-size:15px; }
-    }
-    
-    /* Ticker: slower on mobile + pause on touch/hover */
-    @media (max-width:540px){
-      .ticker__row{ animation-duration:42s !important; }
-    }
-    .ticker:hover .ticker__row,
-    .ticker:active .ticker__row{
-      animation-play-state: paused;
-    }
-    
-    /* lock background scroll when menu open (JS syncs this class) */
-    body.nav-locked{
-      overflow:hidden;
-      touch-action:none;
-    }
-    /* === END MOBILE_RESPONSIVE_PATCH v1 === */
-
-    /* === PHOTO FIX PATCH (do not remove) === */
-    .frame{
-      aspect-ratio: 4 / 3;
-      background:#fff;
-    }
-    .frame img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center top;
-      display:block;
-    }
-    <style>
-/* === FINAL PHOTO FIX (must stay after stoxgear-pro.css) === */
-.frame{
-  aspect-ratio: 4 / 3 !important;
-  background:#fff !important;
-  overflow:hidden !important;
-}
-
-.frame img{
-  width:100% !important;
-  height:100% !important;
-  object-fit:cover !important;          /* fills frame nicely */
-  object-position:center 18% !important;/* keeps face higher */
-  display:block !important;
-}
-/* === END FINAL PHOTO FIX === */
-</style>
-    /* === END PHOTO FIX PATCH === */
   </style>
-<link href="assets/stoxgear-pro.css" rel="stylesheet"/></head>
-<body data-page="board of directors.html">
-<!-- ========== NAVBAR ========== -->
-<header class="nx-navbar" id="nxHeader">
-<div class="nx-nav-inner">
-<a aria-label="StoxGear Home" class="nx-brand" href="index.html">
-<img alt="StoxGear" class="nx-logo" src="stoxgear-logo.jpg"/>
-<img alt="Partner" class="nx-logo2" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
-</a>
-<div class="nx-grow"></div>
-<nav aria-label="Primary navigation" class="nx-menu" id="nxMenu">
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-why" href="#">Why Us</a>
-<div class="nx-drop" id="dd-why">
-<a href="about.html">About Us</a>
-<a href="BOARD of directors.html">Board / Management</a>
-<a href="Mission.html">Mission &amp; Vision</a>
-<a href="associated companies.html">Associated Companies</a>
-<a href="Ncb auditor details .html">Auditors / Legal Advisors</a>
-<a href="services.html">Services</a>
-<a href="Registered agents..html">Registered Agents</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-edu" href="#">Education</a>
-<div class="nx-drop" id="dd-edu">
-<a href="New to trading.html">New to Trading</a>
-<a href="Investorguid.html">Investor Guide</a>
-<a href="Glossary.html">Glossary</a>
-<a href="psx-rule-book.html">PSX Rule Book</a>
-<a href="common-terms-share-market.html">Common Terms of Share Market</a>
-<a href="online-order-execution-flow.html">Order Execution Flow</a>
-<a href="order-settlement-flow.html">Order Settlement Flow</a>
-<a href="arbitration-procedure.html">Arbitration Procedure</a>
-<a href="risk-disclosure-document.html">Risk Disclosure Document</a>
-<a href="procedure-cancel-pending-orders.html">Cancel Pending Orders</a>
-<a href="faqs.html">FAQs</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-open" href="#">Open Account</a>
-<div class="nx-drop" id="dd-open">
-<a href="Rda.html">Roshan Digital Account</a>
-<a href="Acoocint opening.html">Open Digital Account</a>
-<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-dl" href="#">Downloads</a>
-<div class="nx-drop" id="dd-dl">
-<a href="Forms.html">Forms</a>
-<a href="software.html">Software</a>
-<a href="Annaual half yearly.html">Financial Statements</a>
-<a href="KYC poslicy.html">CDD / KYC Policy</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" data-dd="dd-sup" href="#">Support</a>
-<div class="nx-drop" id="dd-sup">
-<a href="investor complaint.html">Investor Complaint</a>
-<a href="Pending investor complaun.html">Pending Complaints</a>
-<a href="Penal action.html">Penal Action</a>
-<a href="Secp complaint.html">SECP Complaint</a>
-<a href="psx complaint.html">PSX Complaint</a>
-<a href="UIs of NICCPL.html">UIS Services</a>
-<a href="Eservices By CDC.html">EServices by CDC</a>
-</div>
-</div>
-<div class="nx-item">
-<a class="nx-link" href="Contact.html">Contact</a>
-</div>
-</nav>
-<button class="nx-cta" type="button">OPEN AN ACCOUNT</button>
-<button aria-expanded="false" aria-label="Open menu" class="nx-toggle" id="nxToggle">☰</button>
-</div>
-</header>
-<main class="wrap">
-<h1 class="title">Leadership</h1>
-<p class="subtitle">Meet the people steering the vision and execution.</p>
-<section aria-label="Faysal (Faisal) Dawood" class="member reveal">
-<figure class="frame">
-<img alt="Faisal Dawood portrait" src="faisal-dawood.jpg" loading="lazy" decoding="async"/>
-</figure>
-<div>
-<h3>Faysal (Faisal) Dawood</h3>
-<div class="role">CEO</div>
-<div class="chips">
-<span class="chip">20+ yrs capital markets</span>
-<span class="chip">Digital Strategy</span>
-<span class="chip">Ops &amp; Compliance</span>
-</div>
-<p>Faysal Dawood is a seasoned professional with over 20 years of experience in Pakistan’s capital markets. His last assignment was as Head of Online at AKD Securities Ltd., where he led the company’s digital strategy, managing its website, mobile app, and online channels to deliver secure, user-friendly, and compliant trading experiences.</p>
-<p>Throughout his career at AKD Securities since 2004, he has held key roles across operations, customer service, problem resolution, and account management—driving process improvements, leading change, and championing service excellence at every touch point.</p>
-<p>With expertise in regulatory coordination, call center technology, internal audit, and risk management, Faysal is known for operational efficiency and customer focus.</p>
-</div>
-</section>
-<section aria-label="Salman Hussain" class="member reveal">
-<figure class="frame">
-<img alt="Salman Hussain portrait" src="salman-hussain.jpg" loading="lazy" decoding="async"/>
-</figure>
-<div>
-<h3>Salman Hussain</h3>
-<div class="role">Sponsor / Director</div>
-<div class="chips">
-<span class="chip">16+ yrs investor</span>
-<span class="chip">Equity Markets</span>
-<span class="chip">Portfolio Mindset</span>
-</div>
-<p>Salman Hussain is a seasoned investor and finance professional with over 16 years of experience in Pakistan’s capital markets. He has maintained an equity trading account with AKD Securities Limited since March 25, 2008 and actively engages in portfolio management.</p>
-<p>As of May 22, 2025, his equity balance stood at over PKR 21.44 million, reflecting depth and commitment to capital markets participation. He holds an MS in Management Sciences from Abdul Wali Khan University, Mardan (session 2012–2014).</p>
-<p>Hussain is proposed sponsor and director in the Company holding <strong>1,700,000 ordinary shares</strong>.</p>
-</div>
-</section>
-<section aria-label="Muhammad Usman Sajid" class="member reveal">
-<figure class="frame">
-<img alt="Muhammad Usman Sajid portrait" src="usman-sajid.jpg" loading="lazy" decoding="async"/>
-</figure>
-<div>
-<h3>Muhammad Usman Sajid</h3>
-<div class="role">Director / Compliance Officer</div>
-<div class="chips">
-<span class="chip">8+ yrs capital markets</span>
-<span class="chip">800+ equity accounts</span>
-<span class="chip">IFMP Certified</span>
-</div>
-<p>Usman Sajid brings over eight years of diversified experience across leading brokerage houses (AKD Securities Limited and Market 786 (Pvt.) Ltd.). He successfully opened and managed 800+ equity accounts (cumulative portfolio &gt; PKR 1.4 billion), 25 mutual fund accounts (~PKR 950 million), and 30 commodity accounts (~PKR 30 million), handling end-to-end client service, administration, and portfolio support.</p>
-<p><strong>Certifications (IFMP &amp; others):</strong> Stock Brokers Certification (SBC), Mutual Fund Distributor’s Certification (MFDC), Fixed Income Securities Certification (FISC), Financial Derivatives Traders’ Certification (FDTC), Pakistan Market Regulations Certification (PMRC), Financial Advisors Certification (FAC), plus certifications in Taxation Laws, Digital Marketing, QuickBooks &amp; E-Commerce Management.</p>
-<p>He holds an M.Com. from The Islamia University of Bahawalpur with a focus on Financial Management, Investment Analysis, Corporate Finance, and Accounting.</p>
-</div>
-</section>
+</head>
 
-<section aria-label="Mr. Samiullah" class="member reveal">
-  <figure class="frame">
-    <img alt="Mr. Samiullah portrait" src="samiullah.jpg" loading="lazy" decoding="async"/>
-  </figure>
-  <div>
-    <h3>Mr. Samiullah</h3>
-    <div class="role">Brokerage Operations & Client Advisory</div>
-    <div class="chips">
-      <span class="chip">Brokerage Industry</span>
-      <span class="chip">Account Opening</span>
-      <span class="chip">Investment Management</span>
-      <span class="chip">Client Advisory</span>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="nx-navbar" id="nxHeader">
+    <div class="nx-nav-inner">
+      <a class="nx-brand" href="index.html">
+        <img class="nx-logo" src="stoxgear-logo.jpg" alt="Stoxgear">
+        <img class="nx-logo2" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg" alt="Partner">
+      </a>
+
+      <div class="nx-grow"></div>
+
+      <nav class="nx-menu" id="nxMenu">
+        <div class="nx-item">
+          <a class="nx-link" href="#">Why Us</a>
+          <div class="nx-drop">
+            <a href="about.html">About Us</a>
+            <a href="BOARD of directors.html">Board / Management</a>
+            <a href="Mission.html">Mission & Vision</a>
+            <a href="associated companies.html">Associated Companies</a>
+            <a href="Ncb auditor details .html">Auditors / Legal Advisors</a>
+            <a href="services.html">Services</a>
+            <a href="Registered agents..html">Registered Agents</a>
+          </div>
+        </div>
+
+        <div class="nx-item">
+          <a class="nx-link" href="#">Education</a>
+          <div class="nx-drop">
+            <a href="New to trading.html">New to Trading</a>
+            <a href="Investorguid.html">Investor Guide</a>
+            <a href="Glossary.html">Glossary</a>
+            <a href="psx-rule-book.html">PSX Rule Book</a>
+            <a href="common-terms-share-market.html">Common Terms of Share Market</a>
+            <a href="online-order-execution-flow.html">Order Execution Flow</a>
+            <a href="order-settlement-flow.html">Order Settlement Flow</a>
+            <a href="arbitration-procedure.html">Arbitration Procedure</a>
+            <a href="risk-disclosure-document.html">Risk Disclosure Document</a>
+            <a href="procedure-cancel-pending-orders.html">Cancel Pending Orders</a>
+            <a href="faqs.html">FAQs</a>
+          </div>
+        </div>
+
+        <div class="nx-item">
+          <a class="nx-link" href="#">Open Account</a>
+          <div class="nx-drop">
+            <a href="Rda.html">Roshan Digital Account</a>
+            <a href="Acoocint opening.html">Open Digital Account</a>
+            <a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+          </div>
+        </div>
+
+        <div class="nx-item">
+          <a class="nx-link" href="#">Downloads</a>
+          <div class="nx-drop">
+            <a href="Forms.html">Forms</a>
+            <a href="software.html">Software</a>
+            <a href="Annaual half yearly.html">Financial Statements</a>
+            <a href="KYC poslicy.html">CDD / KYC Policy</a>
+          </div>
+        </div>
+
+        <div class="nx-item">
+          <a class="nx-link" href="#">Support</a>
+          <div class="nx-drop">
+            <a href="investor complaint.html">Investor Complaint</a>
+            <a href="Pending investor complaun.html">Pending Complaints</a>
+            <a href="Penal action.html">Penal Action</a>
+            <a href="Secp complaint.html">SECP Complaint</a>
+            <a href="psx complaint.html">PSX Complaint</a>
+            <a href="UIs of NICCPL.html">UIS Services</a>
+            <a href="Eservices By CDC.html">EServices by CDC</a>
+          </div>
+        </div>
+
+        <div class="nx-item">
+          <a class="nx-link" href="Contact.html">Contact</a>
+        </div>
+      </nav>
+
+      <button class="nx-cta">OPEN AN ACCOUNT</button>
+      <button class="nx-toggle" id="nxToggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-    <p>Mr. Samiullah has extensive experience in the brokerage industry, having worked across multiple organizations in client-facing and operational roles.</p>
-    <p>He specializes in account opening, investment management, and advisory services, supporting clients through informed and compliant investment decisions.</p>
-    <p>His professional approach is rooted in market insight, regulatory awareness, and long-term value creation for clients.</p>
-  </div>
-</section>
+  </header>
 
-<section aria-label="Furqan Khan" class="member reveal reverse">
-  <figure class="frame">
-    <img alt="Furqan Khan portrait" src="furqan-khan.jpg" loading="lazy" decoding="async"/>
-  </figure>
-  <div>
-    <h3>Furqan Khan</h3>
-    <div class="role">Business Development & PSX Trading</div>
-    <div class="chips">
-      <span class="chip">International Development</span>
-      <span class="chip">Sales Leadership</span>
-      <span class="chip">Automotive Industry</span>
-      <span class="chip">PSX Trading</span>
+  <main class="wrap">
+    <h1 class="title">Leadership</h1>
+    <p class="subtitle">Meet the people steering the vision and execution.</p>
+
+    <section class="member reveal" aria-label="Faysal (Faisal) Dawood">
+      <figure class="frame">
+        <img src="faisal-dawood.jpg" alt="Faisal Dawood portrait"/>
+      </figure>
+      <div>
+        <h3>Faysal (Faisal) Dawood</h3>
+        <div class="role">CEO</div>
+        <div class="chips">
+          <span class="chip">20+ yrs capital markets</span>
+          <span class="chip">Digital Strategy</span>
+          <span class="chip">Ops & Compliance</span>
+        </div>
+        <p>Faysal Dawood is a seasoned professional with over 20 years of experience in Pakistan’s capital markets. His last assignment was as Head of Online at AKD Securities Ltd., where he led the company’s digital strategy, managing its website, mobile app, and online channels to deliver secure, user-friendly, and compliant trading experiences.</p>
+        <p>Throughout his career at AKD Securities since 2004, he has held key roles across operations, customer service, problem resolution, and account management—driving process improvements, leading change, and championing service excellence at every touch point.</p>
+        <p>With expertise in regulatory coordination, call center technology, internal audit, and risk management, Faysal is known for operational efficiency and customer focus.</p>
+      </div>
+    </section>
+
+    <section class="member reverse reveal" aria-label="Salman Hussain">
+      <div>
+        <h3>Salman Hussain</h3>
+        <div class="role">Sponsor / Director</div>
+        <div class="chips">
+          <span class="chip">16+ yrs investor</span>
+          <span class="chip">Equity Markets</span>
+          <span class="chip">Portfolio Mindset</span>
+        </div>
+        <p>Salman Hussain is a seasoned investor and finance professional with over 16 years of experience in Pakistan’s capital markets. He has maintained an equity trading account with AKD Securities Limited since March 25, 2008 and actively engages in portfolio management.</p>
+        <p>As of May 22, 2025, his equity balance stood at over PKR 21.44 million, reflecting depth and commitment to capital markets participation. He holds an MS in Management Sciences from Abdul Wali Khan University, Mardan (session 2012–2014).</p>
+        <p>Hussain is proposed sponsor and director in the Company holding <strong>1,700,000 ordinary shares</strong>.</p>
+      </div>
+      <figure class="frame">
+        <img src="salman-hussain.jpg" alt="Salman Hussain portrait"/>
+      </figure>
+    </section>
+
+    <section class="member reveal" aria-label="Muhammad Usman Sajid">
+      <figure class="frame">
+        <img src="usman-sajid.jpg" alt="Muhammad Usman Sajid portrait"/>
+      </figure>
+      <div>
+        <h3>Muhammad Usman Sajid</h3>
+        <div class="role">Director / Compliance Officer</div>
+        <div class="chips">
+          <span class="chip">8+ yrs capital markets</span>
+          <span class="chip">800+ equity accounts</span>
+          <span class="chip">IFMP Certified</span>
+        </div>
+        <p>Usman Sajid brings over eight years of diversified experience across leading brokerage houses (AKD Securities Limited and Market 786 (Pvt.) Ltd.). He successfully opened and managed 800+ equity accounts (cumulative portfolio &gt; PKR 1.4 billion), 25 mutual fund accounts (~PKR 950 million), and 30 commodity accounts (~PKR 30 million), handling end-to-end client service, administration, and portfolio support.</p>
+        <p><strong>Certifications (IFMP &amp; others):</strong> Stock Brokers Certification (SBC), Mutual Fund Distributor’s Certification (MFDC), Fixed Income Securities Certification (FISC), Financial Derivatives Traders’ Certification (FDTC), Pakistan Market Regulations Certification (PMRC), Financial Advisors Certification (FAC), plus certifications in Taxation Laws, Digital Marketing, QuickBooks &amp; E-Commerce Management.</p>
+        <p>He holds an M.Com. from The Islamia University of Bahawalpur with a focus on Financial Management, Investment Analysis, Corporate Finance, and Accounting.</p>
+      </div>
+    </section>
+
+    <!-- ===== Sponsors / Shareholding Pattern ===== -->
+    <section class="sponsors reveal" aria-label="Sponsors and Shareholding">
+      <h2>Details of Sponsors along with Shareholding Pattern of the Company</h2>
+
+      <div class="tablewrap">
+        <table class="sponsor-table">
+          <thead>
+            <tr>
+              <th>Name of Sponsors</th>
+              <th class="num">Number of Shares Held</th>
+              <th class="pct">Percentage</th>
+            </tr>
+          </thead>
+
+          <tbody id="sponsorBody">
+            <tr data-shares="1699999">
+              <td>Mr. Salman Hussain</td>
+              <td class="num">—</td>
+              <td class="pct">—</td>
+            </tr>
+            <tr data-shares="100000">
+              <td>Mrs. Salman Hussain</td>
+              <td class="num">—</td>
+              <td class="pct">—</td>
+            </tr>
+            <tr data-shares="1">
+              <td>Muhammad Usman Sajid</td>
+              <td class="num">—</td>
+              <td class="pct">—</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th>Total</th>
+              <th id="totalShares" class="num">—</th>
+              <th id="totalPercent" class="pct">100.00%</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <section class="info-grid">
+        <div class="info-card">
+          <h3>Committees & Roles</h3>
+          <ul>
+            <li><strong>Audit Committee:</strong> Salman Hussain (Chairperson), Muhammad Usman Sajid (Member)</li>
+            <li><strong>Compliance Officer:</strong> Muhammad Usman Sajid</li>
+            <li><strong>Management Rating:</strong> Not Rated Yet</li>
+          </ul>
+        </div>
+
+        <div class="info-card contact">
+          <h3>Contact Information</h3>
+          <p>Office No. 6, 4th Floor, Mall of KPK,</p>
+          <p>University Road, Jahangir Abad, Peshawar</p>
+          <p>Mobile: <a href="tel:+923158706976">0315-8706976</a> (Salman Hussain)</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="nx-footer">
+    <div class="nx-foot-wrap">
+      <div class="nx-foot-top">
+        <a class="nx-foot-brand" href="index.html">
+          <img class="nx-foot-logo" src="stoxgear-logo.jpg" alt="">
+          <img class="nx-foot-logo" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="nx-foot-grid">
+        <div class="nx-foot-col">
+          <h4>WHY US</h4>
+          <a href="about.html">About Us</a>
+          <a href="BOARD of directors.html">Board / Management</a>
+          <a href="Mission.html">Mission & Vision</a>
+        </div>
+
+        <div class="nx-foot-col">
+          <h4>EDUCATION</h4>
+          <a href="New to trading.html">New to Trading</a>
+          <a href="Investorguid.html">Investor Guide</a>
+          <a href="Glossary.html">Glossary</a>
+        </div>
+
+        <div class="nx-foot-col">
+          <h4>ACCOUNT</h4>
+          <a href="Rda.html">Roshan Digital Account</a>
+          <a href="Acoocint opening.html">Open Digital Account</a>
+          <a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
+        </div>
+
+        <div class="nx-foot-col">
+          <h4>CONTACT</h4>
+          <a href="mailto:info@stoxgear.com.pk">info@stoxgear.com.pk</a>
+          <a href="tel:0913168395">091-3168395</a>
+          <a href="#">Karachi, Pakistan</a>
+        </div>
+      </div>
+
+      <div class="nx-foot-bottom">
+        <span>© <script>document.write(new Date().getFullYear())</script> Stoxgear Securities (Private) Limited</span>
+        <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+      </div>
     </div>
-    <p>Furqan Khan is a results-driven professional with experience in the international development sector and strong sales leadership credentials from the automotive industry, including Atlas Honda.</p>
-    <p>He has consistently exceeded targets while building strong and trusted client relationships.</p>
-    <p>Currently, he is focused on driving growth in PSX trading by delivering market insights and tailored investment solutions.</p>
-  </div>
-</section>
+  </footer>
 
-<!-- ===== Sponsors / Shareholding Pattern ===== -->
-<section aria-label="Sponsors and Shareholding" class="sponsors reveal">
-<h2>Details of Sponsors along with Shareholding Pattern of the Company</h2>
-<div class="tablewrap">
-<table class="sponsor-table">
-<thead>
-<tr>
-<th>Name of Sponsors</th>
-<th class="num">Number of Shares Held</th>
-<th class="pct">Percentage</th>
-</tr>
-</thead>
-<tbody id="sponsorBody">
-<tr data-shares="1699999">
-<td>Mr. Salman Hussain</td>
-<td class="num">—</td>
-<td class="pct">—</td>
-</tr>
-<tr data-shares="100000">
-<td>Mrs. Salman Hussain</td>
-<td class="num">—</td>
-<td class="pct">—</td>
-</tr>
-<tr data-shares="1">
-<td>Muhammad Usman Sajid</td>
-<td class="num">—</td>
-<td class="pct">—</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<th>Total</th>
-<th class="num" id="totalShares">—</th>
-<th class="pct" id="totalPercent">100.00%</th>
-</tr>
-</tfoot>
-</table>
-</div>
-<section class="info-grid">
-<div class="info-card">
-<h3>Committees &amp; Roles</h3>
-<ul>
-<li><strong>Audit Committee:</strong> Salman Hussain (Chairperson), Muhammad Usman Sajid (Member)</li>
-<li><strong>Compliance Officer:</strong> Muhammad Usman Sajid</li>
-<li><strong>Management Rating:</strong> Not Rated Yet</li>
-</ul>
-</div>
-<div class="info-card contact">
-<h3>Contact Information</h3>
-<p>Office No. 6, 4th Floor, Mall of KPK,</p>
-<p>University Road, Jahangir Abad, Peshawar</p>
-<p>Mobile: <a href="tel:+923158706976">0315-8706976</a> (Salman Hussain)</p>
-</div>
-</section>
-</section>
-</main>
-<!-- ========== FOOTER ========== -->
-<footer class="nx-footer">
-<div class="nx-foot-wrap">
-<div class="nx-foot-top">
-<a class="nx-foot-brand" href="index.html">
-<img alt="" class="nx-foot-logo" src="stoxgear-logo.jpg"/>
-<img alt="" class="nx-foot-logo" src="WhatsApp Image 2025-10-18 at 10.34.53_ed0e28f6.jpg"/>
-</a>
-</div>
-<div class="nx-foot-grid">
-<div class="nx-foot-col">
-<h4>WHY US</h4>
-<a href="about.html">About Us</a>
-<a href="BOARD of directors.html">Board / Management</a>
-<a href="Mission.html">Mission &amp; Vision</a>
-</div>
-<div class="nx-foot-col">
-<h4>EDUCATION</h4>
-<a href="New to trading.html">New to Trading</a>
-<a href="Investorguid.html">Investor Guide</a>
-<a href="Glossary.html">Glossary</a>
-</div>
-<div class="nx-foot-col">
-<h4>ACCOUNT</h4>
-<a href="Rda.html">Roshan Digital Account</a>
-<a href="Acoocint opening.html">Open Digital Account</a>
-<a href="DMANAGE FUDNDS.HTML">Manage Funds</a>
-</div>
-<div class="nx-foot-col">
-<h4>CONTACT</h4>
-<a href="mailto:info@stoxgear.com.pk">info@stoxgear.com.pk</a>
-<a href="tel:0913168395">091-3168395</a>
-<a href="#">Peshawar, Pakistan</a>
-</div>
-</div>
-<div class="nx-foot-bottom">
-<span>© <script>
-/* DEVICE DETECTION (PC vs Mobile) */
-(function(){
-  const root = document.documentElement;
-  function detect(){
-    const coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-    const small  = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
-    const uaMob  = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isMobile = coarse || small || uaMob;
-    root.classList.toggle('is-mobile', isMobile);
-    root.classList.toggle('is-desktop', !isMobile);
-  }
-  detect();
-  window.addEventListener('resize', detect, {passive:true});
-})();
-
-document.write(new Date().getFullYear())</script> Stoxgear Securities (Private) Limited</span>
-<span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
-</div>
-</div>
-</footer>
-<script>
+  <script>
     // Scroll reveal
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        for (const e of entries){
+          if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+        }
+      }, {threshold:.15});
+      document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+    })();
+
+    // Navbar scroll shadow
+    (function(){
+      const header = document.getElementById("nxHeader");
+      if(!header) return;
+      const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+      onScroll();
+      window.addEventListener("scroll", onScroll, {passive:true});
+    })();
+
+    // Mobile menu toggle
     (function(){
       const header = document.getElementById('nxHeader');
       const menu   = document.getElementById('nxMenu');
       const toggle = document.getElementById('nxToggle');
-
-      if(!header || !menu || !toggle) return;
-
-      const isMobile = () => window.matchMedia("(max-width:1024px)").matches;
-
-      function closeMenu(){
-        header.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded','false');
-        document.body.classList.remove('nav-locked');
-        // close all open dropdowns
-        menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
+      if (toggle && header && menu){
+        toggle.addEventListener('click', () => {
+          const open = !header.classList.contains('is-open');
+          header.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', String(open));
+        });
       }
-
-      function openMenu(){
-        header.classList.add('is-open');
-        toggle.setAttribute('aria-expanded','true');
-        document.body.classList.add('nav-locked');
-      }
-
-      toggle.addEventListener('click', ()=>{
-        const open = header.classList.contains('is-open');
-        if(open) closeMenu(); else openMenu();
-      });
-
-      // Dropdown tap (mobile): supports both data-dd links and "nextElementSibling .nx-drop"
-      menu.addEventListener('click', (e)=>{
-        const link = e.target.closest('.nx-link');
-        if(!link) return;
-
-        const mobile = isMobile();
-        const hasDataDd = link.hasAttribute('data-dd') || link.getAttribute('data-dd');
-        const next = link.nextElementSibling;
-        const hasDrop = next && next.classList && next.classList.contains('nx-drop');
-
-        if(mobile && (hasDataDd || hasDrop)){
-          e.preventDefault();
-          const item = link.closest('.nx-item');
-          if(!item) return;
-          // close others
-          menu.querySelectorAll('.nx-item.open').forEach(i => { if(i !== item) i.classList.remove('open'); });
-          item.classList.toggle('open');
-        }
-      });
-
-      // click outside closes (mobile only)
-      document.addEventListener('click', (e)=>{
-        if(!isMobile()) return;
-        if(header && !header.contains(e.target)) closeMenu();
-      });
-
-      // if resized to desktop, reset state
-      window.addEventListener('resize', ()=>{
-        if(!isMobile()) closeMenu();
-      }, {passive:true});
     })();
 
     // ===== Auto-calc sponsor percentages & totals =====
@@ -929,56 +689,5 @@ document.write(new Date().getFullYear())</script> Stoxgear Securities (Private) 
       if(totalPct) totalPct.textContent = "100.00%";
     })();
   </script>
-<script defer="True" src="assets/stoxgear-pro.js"></script>
-  <script>
-// === MOBILE_RESPONSIVE_PATCH v1 (do not remove) ===
-(function(){
-  const header = document.getElementById('nxHeader');
-  const toggle = document.getElementById('nxToggle');
-  const menu   = document.getElementById('nxMenu');
-  if(!header) return;
-
-  const isMobile = () => window.matchMedia && window.matchMedia('(max-width:1024px)').matches;
-
-  // Sync body lock with menu open state (does NOT toggle, only sync)
-  const syncLock = () => {
-    const open = header.classList.contains('is-open') && isMobile();
-    document.body.classList.toggle('nav-locked', open);
-  };
-
-  // after any toggle click, sync lock
-  if(toggle){
-    toggle.addEventListener('click', ()=> setTimeout(syncLock, 0));
-  }
-
-  // close menu if switching to desktop width
-  window.addEventListener('resize', ()=>{
-    if(!isMobile()){
-      header.classList.remove('is-open');
-      document.body.classList.remove('nav-locked');
-      toggle && toggle.setAttribute('aria-expanded','false');
-      menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
-    }else{
-      syncLock();
-    }
-  }, {passive:true});
-
-  // click outside closes on mobile (if page doesn't already)
-  document.addEventListener('click', (e)=>{
-    if(!isMobile()) return;
-    if(!header.contains(e.target)){
-      header.classList.remove('is-open');
-      document.body.classList.remove('nav-locked');
-      toggle && toggle.setAttribute('aria-expanded','false');
-      menu && menu.querySelectorAll('.nx-item.open').forEach(i => i.classList.remove('open'));
-    }
-  });
-
-  // initial
-  syncLock();
-})();
-// === END MOBILE_RESPONSIVE_PATCH v1 ===
-  </script>
-
 </body>
 </html>
