@@ -540,6 +540,23 @@
       object-position:center top;
       display:block;
     }
+    <style>
+/* === FINAL PHOTO FIX (must stay after stoxgear-pro.css) === */
+.frame{
+  aspect-ratio: 4 / 3 !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+
+.frame img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;          /* fills frame nicely */
+  object-position:center 18% !important;/* keeps face higher */
+  display:block !important;
+}
+/* === END FINAL PHOTO FIX === */
+</style>
     /* === END PHOTO FIX PATCH === */
   </style>
 <link href="assets/stoxgear-pro.css" rel="stylesheet"/></head>
